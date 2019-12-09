@@ -4999,7 +4999,7 @@ Sets the representative for <strong>account</strong> in <strong>wallet</strong> 
 </pre></div>
 <strong>Optional "work"</strong></p>
 <p><em>version 9.0+</em><br />
-Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source  </p>
+Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source and disables work precaching for this account. Not using this field re-enables work precaching.  </p>
 <hr />
 <h3 id="accounts_create">accounts_create<a class="headerlink" href="#accounts_create" title="Permanent link">&para;</a></h3>
 <p><em>enable_control required, version 9.0+</em><br />
@@ -5110,7 +5110,7 @@ Receive pending <strong>block</strong> for <strong>account</strong> in <strong>w
 </pre></div>
 <strong>Optional "work"</strong></p>
 <p><em>version 9.0+</em><br />
-Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source  </p>
+Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source and disables work precaching for this account. Not using this field re-enables work precaching.  </p>
 <hr />
 <h3 id="receive_minimum">receive_minimum<a class="headerlink" href="#receive_minimum" title="Permanent link">&para;</a></h3>
 <p><em>enable_control required, version 8.0+</em> <br />
@@ -5232,7 +5232,7 @@ Proof of Work is precomputed for <strong>one</strong> transaction in the backgro
 <p>Sending the request again will yield the same block, and will not affect the ledger.</p>
 <p><strong>Optional "work"</strong></p>
 <p><em>version 9.0+</em><br />
-Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source  </p>
+Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source and disables work precaching for this account. Not using this field re-enables work precaching.  </p>
 <p><strong>Request:</strong>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;send&quot;</span><span class="p">,</span>
