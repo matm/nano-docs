@@ -1611,7 +1611,9 @@ Because account filtering needs block content to function, setting this flag to 
 </pre></div>
 
 <h5>Filtering options</h5>
-<p>Filters for <strong>votes</strong> can be used to subscribe only to votes from selected representatives. Once filters are given, votes from representatives that do not match the options are not broadcasted.</p>
+<p>The following filtering options can be combined.</p>
+<h6>Representatives</h6>
+<p>Used to subscribe only to votes from selected representatives. Once filters are given, votes from representatives that do not match the options are not broadcasted. If the result is an empty filter (for example, all given accounts are invalid), then the filter is not used. A message is logged in the node logs when this happens.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;subscribe&quot;</span><span class="p">,</span>
   <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;vote&quot;</span><span class="p">,</span>
@@ -1620,6 +1622,24 @@ Because account filtering needs block content to function, setting this flag to 
       <span class="s2">&quot;nano_16c4ush661bbn2hxc6iqrunwoyqt95in4hmw6uw7tk37yfyi77s7dyxaw8ce&quot;</span><span class="p">,</span>
       <span class="s2">&quot;nano_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis32c&quot;</span>
     <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h6>Vote type</h6>
+<p>Votes are one of three types:</p>
+<ul>
+<li><code>replay</code> , if this exact vote had been seen before</li>
+<li><code>vote</code>, if it is the first time the vote has been seen</li>
+<li><code>indeterminate</code>, when it cannot be determined due to a lack of an associated election</li>
+</ul>
+<p>By default only <code>vote</code> type votes are broadcasted, and the others are filtered. To disable these filters set <code>include_replays</code> to <code>true</code> and/or <code>include_indeterminate</code> to <code>true</code>.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;subscribe&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;vote&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;include_replays&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;include_indeterminate&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1634,7 +1654,8 @@ Because account filtering needs block content to function, setting this flag to 
     <span class="nt">&quot;sequence&quot;</span><span class="p">:</span> <span class="s2">&quot;855471574&quot;</span><span class="p">,</span>
     <span class="nt">&quot;blocks&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="s2">&quot;6FB9DE5D7908DEB8A2EA391AEA95041587CBF3420EF8A606F1489FECEE75C869&quot;</span>
-    <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;replay&quot;</span> <span class="err">//</span> <span class="err">since</span> <span class="err">V</span><span class="mf">21.0</span><span class="p">,</span> <span class="err">can</span> <span class="err">be</span> <span class="err">vote/replay/indeterminate</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
