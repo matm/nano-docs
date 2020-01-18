@@ -1242,29 +1242,29 @@ docker cp <span class="si">${</span><span class="nv">NANO_NAME</span><span class
 </div>
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p>All configuration nodes and values are optional, with the default values shown in comments below:</p>
-<div class="codehilite"><pre><span></span>&quot;node&quot;: {
-    ...
-    &quot;statistics&quot;: {
+<div class="codehilite"><pre><span></span><span class="s2">&quot;node&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;statistics&quot;</span><span class="p">:</span> <span class="p">{</span>
 
-        // Sampling configuration (optional)
-        // Only activate if you need sampling information, as there&#39;s some overhead associated with this feature.
-        &quot;sampling&quot;: {
-            &quot;enabled&quot;: &quot;true&quot;,                // If sampling is enabled. Default false.
-            &quot;capacity&quot;: &quot;5&quot;,                  // How many samples to keep. Must be set if sampling is enabled.
-            &quot;interval&quot;: &quot;1000&quot;                // Sample interval in milliseconds. Must be set if sampling is enabled.
-        },
+        <span class="err">//</span> <span class="err">Sampling</span> <span class="err">configuration</span> <span class="err">(optional)</span>
+        <span class="err">//</span> <span class="err">Only</span> <span class="err">activate</span> <span class="err">if</span> <span class="err">you</span> <span class="err">need</span> <span class="err">sampling</span> <span class="err">information,</span> <span class="err">as</span> <span class="err">there&#39;s</span> <span class="err">some</span> <span class="err">overhead</span> <span class="err">associated</span> <span class="err">with</span> <span class="err">this</span> <span class="err">feature.</span>
+        <span class="nt">&quot;sampling&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>                <span class="err">//</span> <span class="err">If</span> <span class="err">sampling</span> <span class="err">is</span> <span class="err">enabled.</span> <span class="err">Default</span> <span class="err">false.</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span>                  <span class="err">//</span> <span class="err">How</span> <span class="err">many</span> <span class="err">samples</span> <span class="err">to</span> <span class="err">keep.</span> <span class="err">Must</span> <span class="err">be</span> <span class="err">set</span> <span class="err">if</span> <span class="err">sampling</span> <span class="err">is</span> <span class="err">enabled.</span>
+            <span class="nt">&quot;interval&quot;</span><span class="p">:</span> <span class="s2">&quot;1000&quot;</span>                <span class="err">//</span> <span class="err">Sample</span> <span class="err">interval</span> <span class="err">in</span> <span class="err">milliseconds.</span> <span class="err">Must</span> <span class="err">be</span> <span class="err">set</span> <span class="err">if</span> <span class="err">sampling</span> <span class="err">is</span> <span class="err">enabled.</span>
+        <span class="p">},</span>
 
-        // File logging (optional)
-        &quot;log&quot;: {                              
-            &quot;interval_counters&quot;: &quot;5000&quot;,      // How often to write counters to file in milliseconds. Default 0 (off)
-            &quot;interval_samples&quot;: &quot;5000&quot;,       // How often to write samples to file, milliseconds. Default 0 (off)
-            &quot;rotation_count&quot;: &quot;5&quot;,            // Rotate file after writing statistics this many times. Default 100.
-            &quot;headers&quot;: &quot;true&quot;,                // Write header containing log
-            &quot;filename_counters&quot;: &quot;counters.stat&quot;,
-            &quot;filename_samples&quot;: &quot;samples.stat&quot;
-        }
-    }
-}
+        <span class="err">//</span> <span class="err">File</span> <span class="err">logging</span> <span class="err">(optional)</span>
+        <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="p">{</span>                              
+            <span class="nt">&quot;interval_counters&quot;</span><span class="p">:</span> <span class="s2">&quot;5000&quot;</span><span class="p">,</span>      <span class="err">//</span> <span class="err">How</span> <span class="err">often</span> <span class="err">to</span> <span class="err">write</span> <span class="err">counters</span> <span class="err">to</span> <span class="err">file</span> <span class="err">in</span> <span class="err">milliseconds.</span> <span class="err">Default</span> <span class="err">0</span> <span class="err">(off)</span>
+            <span class="nt">&quot;interval_samples&quot;</span><span class="p">:</span> <span class="s2">&quot;5000&quot;</span><span class="p">,</span>       <span class="err">//</span> <span class="err">How</span> <span class="err">often</span> <span class="err">to</span> <span class="err">write</span> <span class="err">samples</span> <span class="err">to</span> <span class="err">file,</span> <span class="err">milliseconds.</span> <span class="err">Default</span> <span class="err">0</span> <span class="err">(off)</span>
+            <span class="nt">&quot;rotation_count&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span>            <span class="err">//</span> <span class="err">Rotate</span> <span class="err">file</span> <span class="err">after</span> <span class="err">writing</span> <span class="err">statistics</span> <span class="err">this</span> <span class="err">many</span> <span class="err">times.</span> <span class="err">Default</span> <span class="err">100.</span>
+            <span class="nt">&quot;headers&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>                <span class="err">//</span> <span class="err">Write</span> <span class="err">header</span> <span class="err">containing</span> <span class="err">log</span>
+            <span class="nt">&quot;filename_counters&quot;</span><span class="p">:</span> <span class="s2">&quot;counters.stat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;filename_samples&quot;</span><span class="p">:</span> <span class="s2">&quot;samples.stat&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h4 id="available-type-detail-and-direction-values">Available type, detail and direction values<a class="headerlink" href="#available-type-detail-and-direction-values" title="Permanent link">&para;</a></h4>
@@ -1285,10 +1285,12 @@ docker cp <span class="si">${</span><span class="nv">NANO_NAME</span><span class
     udp
     observer
     confirmation_height
-    drop    
+    drop
+    requests
 
 details:
-        all
+    all
+
     // error specific
     bad_sender
     insufficient_work
@@ -1371,6 +1373,11 @@ details:
     blocks_confirmed
     invalid_block
 
+    // requests
+    requests_votes_cached
+    requests_votes_generated
+    requests_votes_ignored
+
 dir (direction) :
     in
     out
@@ -1378,128 +1385,128 @@ dir (direction) :
 
 <h3 id="rpc-command">RPC Command<a class="headerlink" href="#rpc-command" title="Permanent link">&para;</a></h3>
 <h4 id="counters-query">Counters query:<a class="headerlink" href="#counters-query" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-    &quot;action&quot;: &quot;stats&quot;,
-    &quot;type&quot;: &quot;counters&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;stats&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;counters&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 <h4 id="counters-response">Counters response<a class="headerlink" href="#counters-response" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-    &quot;type&quot;: &quot;counters&quot;,
-    &quot;created&quot;: &quot;2018.03.29 01:46:36&quot;,
-    &quot;entries&quot;: [
-        {
-            &quot;time&quot;: &quot;01:46:36&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;3122792&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:46:36&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;out&quot;,
-            &quot;value&quot;: &quot;203184&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:46:36&quot;,
-            &quot;type&quot;: &quot;message&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;12494&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:46:36&quot;,
-            &quot;type&quot;: &quot;message&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;out&quot;,
-            &quot;value&quot;: &quot;1380&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:46:36&quot;,
-            &quot;type&quot;: &quot;message&quot;,
-            &quot;detail&quot;: &quot;keepalive&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;172&quot;
-        },
-        ...
-    ]
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;counters&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2018.03.29 01:46:36&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;entries&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:46:36&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;3122792&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:46:36&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;203184&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:46:36&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;12494&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:46:36&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1380&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:46:36&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;keepalive&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;172&quot;</span>
+        <span class="p">},</span>
+        <span class="err">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 
 <h4 id="samples-query">Samples query:<a class="headerlink" href="#samples-query" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-    &quot;action&quot;: &quot;stats&quot;,
-    &quot;type&quot;: &quot;samples&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;stats&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;samples&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 <h4 id="samples-response">Samples response<a class="headerlink" href="#samples-response" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-    &quot;type&quot;: &quot;samples&quot;,
-    &quot;created&quot;: &quot;2018.03.29 01:47:08&quot;,
-    &quot;entries&quot;: [
-        {
-            &quot;time&quot;: &quot;01:47:04&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;59480&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:05&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;44496&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:06&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;44136&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:07&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;18784&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:08&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;in&quot;,
-            &quot;value&quot;: &quot;22680&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:03&quot;,
-            &quot;type&quot;: &quot;traffic&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;out&quot;,
-            &quot;value&quot;: &quot;4128&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:04&quot;,
-            &quot;type&quot;: &quot;message&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;out&quot;,
-            &quot;value&quot;: &quot;17&quot;
-        },
-        {
-            &quot;time&quot;: &quot;01:47:05&quot;,
-            &quot;type&quot;: &quot;message&quot;,
-            &quot;detail&quot;: &quot;all&quot;,
-            &quot;dir&quot;: &quot;out&quot;,
-            &quot;value&quot;: &quot;10&quot;
-        },
-        ...
-    ]
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;samples&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2018.03.29 01:47:08&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;entries&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:04&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;59480&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:05&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;44496&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:06&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;44136&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:07&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;18784&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:08&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;22680&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:03&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;4128&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:04&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;17&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;01:47:05&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dir&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span>
+        <span class="p">},</span>
+        <span class="err">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 
 <h3 id="log-file-example">Log file example<a class="headerlink" href="#log-file-example" title="Permanent link">&para;</a></h3>
