@@ -3437,6 +3437,54 @@ Initialize lazy bootstrap with given block <strong>hash</strong>. Not compatible
 <span class="p">}</span>
 </pre></div>
 <strong>Response:</strong>
+<em>versions 21.0+</em>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;bootstrap_threads&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;running_attempts_count&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;total_attempts_count&quot;</span><span class="p">:</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;clients&quot;</span><span class="p">:</span> <span class="s2">&quot;31&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="s2">&quot;45&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;idle&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;target_connections&quot;</span><span class="p">:</span> <span class="s2">&quot;64&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;pulls&quot;</span><span class="p">:</span> <span class="s2">&quot;1158514&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;attempts&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;EE778222D6407F94A666B8A9E03D242D&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;legacy&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;started&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;pulling&quot;</span><span class="p">:</span> <span class="s2">&quot;1158544&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;total_blocks&quot;</span><span class="p">:</span> <span class="s2">&quot;4311&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;requeued_pulls&quot;</span><span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;frontier_pulls&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;frontiers_received&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;frontiers_confirmed&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;frontiers_confirmation_pending&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="s2">&quot;133&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;291D2CC32F44E004896C4215A6CDEDAFEF317F6AC802C244E8F4B4F2456175CB&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;lazy&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;started&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;pulling&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;total_blocks&quot;</span><span class="p">:</span> <span class="s2">&quot;1878&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;requeued_pulls&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_blocks&quot;</span><span class="p">:</span> <span class="s2">&quot;1878&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_state_backlog&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_balances&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_destinations&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_undefined_links&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_pulls&quot;</span><span class="p">:</span> <span class="s2">&quot;13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_keys&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lazy_key_1&quot;</span><span class="p">:</span> <span class="s2">&quot;E6D0B5BD5EBDB3CEC7DBC32EDC3C2DBD5ABA17C54E34485A358BF8948039ED6A&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="s2">&quot;17&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<strong>Response:</strong>
+<em>versions 17.0-20.0</em>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;clients&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;pulls&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
