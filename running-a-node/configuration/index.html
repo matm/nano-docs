@@ -1333,10 +1333,11 @@ enable_voting = true
 <p>As of V18.0, nodes with weight delegated to them under this value in their config will not vote, regardless of the <code>enable_voting</code> flag setting. In order for a node to vote, this value must be lower than the weight delegated to the representative account setup on the node.</p>
 <hr />
 <h4 id="nodework_peers">node.work_peers<a class="headerlink" href="#nodework_peers" title="Permanent link">&para;</a></h4>
-<p>Used when offloading work generation to another node or service. Format must be ipv6, preceded by <code>::ffff:</code> if ipv4. Hostnames are not allowed at this time. Calls are made to the ip:port designated using the standard RPC format <a href="/commands/rpc-protocol#work_generate">work_generate</a>. Example:</p>
+<p>Used when offloading work generation to another node or service. Format must be ipv6, preceded by <code>::ffff:</code> if ipv4. Hostnames are supported since v21. Calls are made to the address:port designated using the standard RPC format <a href="/commands/rpc-protocol#work_generate">work_generate</a>. Example:</p>
 <div class="codehilite"><pre><span></span>[node]
 work_peers = [
-    &quot;::ffff:127.0.0.1:7076&quot;
+    &quot;::ffff:127.0.0.1:7076&quot;,
+    &quot;example.work-peer.org:7000&quot;
 ]
 </pre></div>
 
