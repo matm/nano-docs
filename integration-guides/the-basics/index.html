@@ -656,43 +656,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#block-creation-examples" title="Block Creation Examples" class="md-nav__link">
-    Block Creation Examples
+  <a href="#creating-blocks" title="Creating Blocks" class="md-nav__link">
+    Creating Blocks
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#receive" title="Receive" class="md-nav__link">
-    Receive
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send" title="Send" class="md-nav__link">
-    Send
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change" title="Change" class="md-nav__link">
-    Change
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-send" title="Change &amp; Send" class="md-nav__link">
-    Change &amp; Send
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1193,43 +1159,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#block-creation-examples" title="Block Creation Examples" class="md-nav__link">
-    Block Creation Examples
+  <a href="#creating-blocks" title="Creating Blocks" class="md-nav__link">
+    Creating Blocks
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#receive" title="Receive" class="md-nav__link">
-    Receive
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send" title="Send" class="md-nav__link">
-    Send
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change" title="Change" class="md-nav__link">
-    Change
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-send" title="Change &amp; Send" class="md-nav__link">
-    Change &amp; Send
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1618,179 +1550,8 @@ blake2b(\text{nonce} || \text{public_key}) \ge \text{threshold}
 <p class="admonition-title">Private/public key usage</p>
 <p>Make sure that your private key uses the correct partnering public key while signing as using an incorrect public key may leak information about your private key.</p>
 </div>
-<h3 id="block-creation-examples">Block Creation Examples<a class="headerlink" href="#block-creation-examples" title="Permanent link">&para;</a></h3>
-<p>Read these examples in order to correctly interpret balances and block hashes on the example account-chain.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All example <code>"work"</code> values included in the responses are not valid (<code>0000000000000000</code>).</p>
-</div>
-<h4 id="receive">Receive<a class="headerlink" href="#receive" title="Permanent link">&para;</a></h4>
-<p><em>Scenario</em></p>
-<ul>
-<li>Address creates block sending 5 <span><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span> to <code>nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php</code></li>
-<li>Hash of block sending funds is <code>B2EC73C1F503F47E051AD72ECB512C63BA8E1A0ACC2CEE4EA9A22FE1CBDB693F</code></li>
-<li>We want to receive the pending 5 <span><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span> into this new (unopened) account</li>
-</ul>
-<p><em>Action</em></p>
-<ul>
-<li>Create a block to receive Nano for account: <code>nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php</code> account-chain.</li>
-<li>Sets <code>nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j</code> as the representative.</li>
-<li>This receives the block hash <code>B2EC73C1F503F47E051AD72ECB512C63BA8E1A0ACC2CEE4EA9A22FE1CBDB693F</code> and because this is the first block on the account, the account is considered "opened".</li>
-</ul>
-<div class="codehilite"><pre><span></span>curl -d <span class="s1">&#39;{</span>
-<span class="s1">  &quot;action&quot;:&quot;block_create&quot;,</span>
-<span class="s1">  &quot;json_block&quot;: &quot;true&quot;,</span>
-<span class="s1">  &quot;type&quot;:&quot;state&quot;,</span>
-<span class="s1">  &quot;previous&quot;:&quot;FC5A7FB777110A858052468D448B2DF22B648943C097C0608D1E2341007438B0&quot;,</span>
-<span class="s1">  &quot;account&quot;:&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;,</span>
-<span class="s1">  &quot;representative&quot;:&quot;nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j&quot;,</span>
-<span class="s1">  &quot;balance&quot;:&quot;5000000000000000000000000000000&quot;,</span>
-<span class="s1">  &quot;link&quot;:&quot;B2EC73C1F503F47E051AD72ECB512C63BA8E1A0ACC2CEE4EA9A22FE1CBDB693F&quot;,</span>
-<span class="s1">  &quot;wallet&quot;:&quot;557832FF41BAF4860ED4D7023E9ACE74F1427C3F8232B6AFFB491D98DD0EA1A2&quot;</span>
-<span class="s1">}&#39;</span> http://127.0.0.1:7076
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;597395E83BD04DF8EF30AF04234EAAFE0606A883CF4AEAD2DB8196AAF5C4444F&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;block&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="s2">&quot;FC5A7FB777110A858052468D448B2DF22B648943C097C0608D1E2341007438B0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;representative&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;5000000000000000000000000000001&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;B2EC73C1F503F47E051AD72ECB512C63BA8E1A0ACC2CEE4EA9A22FE1CBDB693F&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link_as_account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3eqegh1zc1znhr4joosgsfakrrxtjrf1om3exs9cmajhw97xptbzi3kfba1j&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;90CBD62F5466E35DB3BFE5EFDBC6283BD30C0591A3787C9458D11F2AF6188E45E6E71B5F4A8E3598B1C80080D6024867878E355161AD1935CD757477991D3B0B&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="s2">&quot;0000000000000000&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<ul>
-<li>The <code>"balance"</code> field is in <span><span class="MathJax_Preview">raw</span><script type="math/tex">raw</script></span> format.  For more information, see <a href="#units">units</a>.</li>
-<li>Take note of the field <code>"link_as_account"</code>. This is if the <code>"link"</code> field were to be interpreted as a 256-bit public key and translated into an "nano_..." address. This field is only provided for convenience and is stripped away before it is broadcast to the network.</li>
-<li>If you are creating and signing your own blocks external to nano_node, you do not need to include a <code>"link_as_account"</code> field.</li>
-</ul>
-</div>
-<hr />
-<h4 id="send">Send<a class="headerlink" href="#send" title="Permanent link">&para;</a></h4>
-<p><em>Scenario</em></p>
-<ul>
-<li>We want to send from our account <code>nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php</code>.</li>
-<li>We want to send 2 <span><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span> to account <code>nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p</code>.</li>
-</ul>
-<p><em>Response</em></p>
-<div class="codehilite"><pre><span></span>curl -d <span class="s1">&#39;{</span>
-<span class="s1">  &quot;action&quot;:&quot;block_create&quot;,</span>
-<span class="s1">  &quot;type&quot;:&quot;state&quot;,</span>
-<span class="s1">  &quot;previous&quot;:&quot;597395E83BD04DF8EF30AF04234EAAFE0606A883CF4AEAD2DB8196AAF5C4444F&quot;,</span>
-<span class="s1">  &quot;account&quot;:&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;,</span>
-<span class="s1">  &quot;representative&quot;:&quot;nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j&quot;,</span>
-<span class="s1">  &quot;balance&quot;:&quot;3000000000000000000000000000000&quot;,</span>
-<span class="s1">  &quot;link&quot;:&quot;nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p&quot;,</span>
-<span class="s1">  &quot;wallet&quot;:&quot;557832FF41BAF4860ED4D7023E9ACE74F1427C3F8232B6AFFB491D98DD0EA1A2&quot;</span>
-<span class="s1">}&#39;</span> http://127.0.0.1:7076
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;128106287002E595F479ACD615C818117FCB3860EC112670557A2467386249D4&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;block&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="s2">&quot;597395E83BD04DF8EF30AF04234EAAFE0606A883CF4AEAD2DB8196AAF5C4444F&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;representative&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;3000000000000000000000000000000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;5C2FBB148E006A8E8BA7A75DD86C9FE00C83F5FFDBFD76EAA09531071436B6AF&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link_as_account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;D7975EE2F6FAE1FC7DA336FB9DD5F7E30FC1A6825021194E614F0588073D1A4901E34E3CAE8739F1DE2FD85A73D2A0B26F8BE6539E0548C9A45E1C1887BFFC05&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="s2">&quot;0000000000000000&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Because the account balance was reduced from <code>5000000000000000000000000000000</code> <span><span class="MathJax_Preview">raw</span><script type="math/tex">raw</script></span> to <code>3000000000000000000000000000000</code> <span><span class="MathJax_Preview">raw</span><script type="math/tex">raw</script></span>, the block is interpreted as a send. The <code>"link"</code> field is populated with the public key of the account we are sending to.</p>
-</div>
-<hr />
-<h4 id="change">Change<a class="headerlink" href="#change" title="Permanent link">&para;</a></h4>
-<p><em>Scenario</em></p>
-<ul>
-<li>We want to change the representative of our account <code>nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php</code></li>
-<li>We want the representative to be <code>nano_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs</code></li>
-</ul>
-<p><em>Response</em></p>
-<div class="codehilite"><pre><span></span>curl -d <span class="s1">&#39;{</span>
-<span class="s1">  &quot;action&quot;:&quot;block_create&quot;,</span>
-<span class="s1">  &quot;type&quot;:&quot;state&quot;,</span>
-<span class="s1">  &quot;previous&quot;:&quot;128106287002E595F479ACD615C818117FCB3860EC112670557A2467386249D4&quot;,</span>
-<span class="s1">  &quot;account&quot;:&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;,</span>
-<span class="s1">  &quot;representative&quot;:&quot;nano_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs&quot;,</span>
-<span class="s1">  &quot;balance&quot;:&quot;3000000000000000000000000000000&quot;,</span>
-<span class="s1">  &quot;link&quot;:&quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,</span>
-<span class="s1">  &quot;wallet&quot;:&quot;557832FF41BAF4860ED4D7023E9ACE74F1427C3F8232B6AFFB491D98DD0EA1A2&quot;</span>
-<span class="s1">}&#39;</span> http://127.0.0.1:7076
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;2A322FD5ACAF50C057A8CF5200A000CF1193494C79C786B579E0B4A7D10E5A1E&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;block&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="s2">&quot;128106287002E595F479ACD615C818117FCB3860EC112670557A2467386249D4&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;representative&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;3000000000000000000000000000000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link_as_account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_1111111111111111111111111111111111111111111111111111hifc8npp&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;7E9A7B368DBEB280B01C22633DC82F6CEF00F529E07B76A0232614D2BCDAF85BF52AC9DA4DBE4468B6F144CE82F2FDE44080C8363F903A6EC3D999252CB1E801&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="s2">&quot;0000000000000000&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note that the <code>""link"</code> field is all 0's. As another sanity check, we notice the all 0 public key gets translated into the burn address <code>nano_1111111111111111111111111111111111111111111111111111hifc8npp</code></p>
-</div>
-<hr />
-<h4 id="change-send">Change &amp; Send<a class="headerlink" href="#change-send" title="Permanent link">&para;</a></h4>
-<p><em>Scenario</em></p>
-<ul>
-<li>We want to change our representative at the same time we perform a send or receive of funds.</li>
-<li>We want to send 2 more <span><span class="MathJax_Preview">nano</span><script type="math/tex">nano</script></span> to account <code>nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p</code></li>
-<li>We want to revert our representative back to <code>nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j</code></li>
-</ul>
-<p><em>Response</em></p>
-<div class="codehilite"><pre><span></span>curl -d <span class="s1">&#39;{</span>
-<span class="s1">  &quot;action&quot;:&quot;block_create&quot;,</span>
-<span class="s1">  &quot;type&quot;:&quot;state&quot;,</span>
-<span class="s1">  &quot;previous&quot;:&quot;2A322FD5ACAF50C057A8CF5200A000CF1193494C79C786B579E0B4A7D10E5A1E&quot;,</span>
-<span class="s1">  &quot;account&quot;:&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;,</span>
-<span class="s1">  &quot;representative&quot;:&quot;nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j&quot;,</span>
-<span class="s1">  &quot;balance&quot;:&quot;1000000000000000000000000000000&quot;,</span>
-<span class="s1">  &quot;link&quot;:&quot;nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p&quot;,</span>
-<span class="s1">  &quot;wallet&quot;:&quot;557832FF41BAF4860ED4D7023E9ACE74F1427C3F8232B6AFFB491D98DD0EA1A2&quot;</span>
-<span class="s1">}&#39;</span> http://127.0.0.1:7076
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;9664412A834F0C27056C7BC4A363FBAE86DF8EF51341A5A5EA14061727AE519F&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;block&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="s2">&quot;2A322FD5ACAF50C057A8CF5200A000CF1193494C79C786B579E0B4A7D10E5A1E&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;representative&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;1000000000000000000000000000000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;5C2FBB148E006A8E8BA7A75DD86C9FE00C83F5FFDBFD76EAA09531071436B6AF&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;link_as_account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;4D388F982188E337D22E0E66CD24BCABD09BED1E920940C453039B55B6A4724D7BD106019AACC1840480938FF4FA024F041E6E6A32B3641C28E0262025020B03&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;work&quot;</span><span class="p">:</span> <span class="s2">&quot;0000000000000000&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<h3 id="creating-blocks">Creating Blocks<a class="headerlink" href="#creating-blocks" title="Permanent link">&para;</a></h3>
+<p>For details on how to create individual blocks for sending from, receiving to, opening or changing representatives for an account, please see the <a href="/integration-guides/key-management/#creating-transactions">Creating Transactions</a> section.</p>
 <hr />
 <h2 id="uri-and-qr-code-standards">URI and QR Code Standards<a class="headerlink" href="#uri-and-qr-code-standards" title="Permanent link">&para;</a></h2>
 <p>Note: <code>amount</code> values should always be in RAW.</p>
