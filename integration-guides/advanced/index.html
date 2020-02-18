@@ -635,6 +635,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#update" title="Update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#subscribeunsubscribe" title="Subscribe/Unsubscribe" class="md-nav__link">
     Subscribe/Unsubscribe
   </a>
@@ -1089,6 +1096,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#update" title="Update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#subscribeunsubscribe" title="Subscribe/Unsubscribe" class="md-nav__link">
     Subscribe/Unsubscribe
   </a>
@@ -1433,6 +1447,18 @@
 <span class="p">}</span>
 </pre></div>
 
+<h3 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
+<p>Some subscriptions can be updated without requiring unsubscribing and re-subscribing to the same topic. A typical message is the following:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;update&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;confirmation&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Updatable filter options are mentioned in the examples below.</p>
 <h3 id="subscribeunsubscribe">Subscribe/Unsubscribe<a class="headerlink" href="#subscribeunsubscribe" title="Permanent link">&para;</a></h3>
 <p>To receive notifications through the websocket you must subscribe to the specific topic and a standard subscription without filters looks like this:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1519,6 +1545,23 @@
 <li>When <code>all_local_accounts</code> is set to <strong><code>true</code></strong>, blocks that mention accounts in any wallet will be broadcasted.</li>
 <li><code>accounts</code> is a list of additional accounts to subscribe to. Both prefixes are supported.</li>
 </ul>
+<details class="tip"><summary>Updating the list of accounts</summary><p><em>version 21.0+</em><br />
+The list of <code>accounts</code> for which blocks are broadcasted can be updated (see <a href="#update">Update</a>):
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;update&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;confirmation&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;accounts_add&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="err">...</span> <span class="err">//</span> <span class="err">additional</span> <span class="err">accounts</span> <span class="err">to</span> <span class="err">track</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;accounts_del&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="err">...</span> <span class="err">//</span> <span class="err">accounts</span> <span class="err">to</span> <span class="err">remove</span> <span class="err">from</span> <span class="err">tracking</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+Note that this can result in an empty filter.</p>
+</details>
 <h5>Response Options</h5>
 <h6>Type field</h6>
 <p>Confirmations sent through WebSockets, whether filtering is used or not, contains a <code>confirmation_type</code> field with values <code>active_quorum</code>, <code>active_confirmation_height</code> or <code>inactive</code>.</p>
