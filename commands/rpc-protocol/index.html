@@ -3171,6 +3171,9 @@ Default "false". If "true", "block" in the response will contain a JSON subtree 
 </pre></div></p>
 <p><strong>Optional "work"</strong></p>
 <p>Work value (16 hexadecimal digits string, 64 bit). Uses <strong>work</strong> value for block from external source  </p>
+<p><strong>Optional "version"</strong></p>
+<p><em>version 21.0+</em>
+Work version string. Currently "work_1" is the default and only valid option. Only used if optional <strong>work</strong> is not given.</p>
 <hr />
 <h3 id="block_hash">block_hash<a class="headerlink" href="#block_hash" title="Permanent link">&para;</a></h3>
 <p><em>version 13.0+</em> <br />
@@ -4833,6 +4836,9 @@ Multiplier from base difficulty (positive number). Uses equivalent difficulty as
 <p><strong>Optional "account"</strong></p>
 <p><em>version 20.0+</em><br />
 A valid Nano account. If provided and <code>use_peers</code> is set to <code>true</code>, this information will be relayed to work peers.</p>
+<p><strong>Optional "version"</strong></p>
+<p><em>version 21.0+</em>
+Work version string. Currently "work_1" is the default and only valid option.</p>
 <hr />
 <h3 id="work_peer_add">work_peer_add<a class="headerlink" href="#work_peer_add" title="Permanent link">&para;</a></h3>
 <p><em>enable_control required, version 8.0+</em>   <br />
@@ -4916,6 +4922,9 @@ Difficulty value (16 hexadecimal digits string, 64 bit). Uses <strong>difficulty
 <p><em>version 20.0+</em><br />
 Multiplier from base difficulty (positive number). Uses equivalent difficulty as <strong>multiplier</strong> from base difficulty to validate work.<br />
 <strong><em>Note:</em></strong> overrides the <code>difficulty</code> parameter.  </p>
+<p><strong>Optional "version"</strong></p>
+<p><em>version 21.0+</em>
+Work version string. Currently "work_1" is the default and only valid option.</p>
 <hr />
 <h2 id="wallet-rpcs">Wallet RPCs<a class="headerlink" href="#wallet-rpcs" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
