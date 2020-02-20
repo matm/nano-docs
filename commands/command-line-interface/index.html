@@ -1056,8 +1056,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-disable_udp" title="--disable_udp" class="md-nav__link">
-    --disable_udp
+  <a href="#-disable_udp-deprecated" title="--disable_udp (Deprecated)" class="md-nav__link">
+    --disable_udp (Deprecated)
   </a>
   
 </li>
@@ -1072,6 +1072,13 @@
           <li class="md-nav__item">
   <a href="#-disable_unchecked_drop" title="--disable_unchecked_drop" class="md-nav__link">
     --disable_unchecked_drop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-enable_udp" title="--enable_udp" class="md-nav__link">
+    --enable_udp
   </a>
   
 </li>
@@ -1740,8 +1747,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-disable_udp" title="--disable_udp" class="md-nav__link">
-    --disable_udp
+  <a href="#-disable_udp-deprecated" title="--disable_udp (Deprecated)" class="md-nav__link">
+    --disable_udp (Deprecated)
   </a>
   
 </li>
@@ -1756,6 +1763,13 @@
           <li class="md-nav__item">
   <a href="#-disable_unchecked_drop" title="--disable_unchecked_drop" class="md-nav__link">
     --disable_unchecked_drop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-enable_udp" title="--enable_udp" class="md-nav__link">
+    --enable_udp
   </a>
   
 </li>
@@ -1803,7 +1817,7 @@
 <h3 id="-config-keyvalue">--config key=value<a class="headerlink" href="#-config-keyvalue" title="Permanent link">&para;</a></h3>
 <p>Pass node configuration values. This takes precedence over any values in the configuration file. This option can be repeated multiple times.</p>
 <h3 id="-confirmation_height_clear">--confirmation_height_clear<a class="headerlink" href="#-confirmation_height_clear" title="Permanent link">&para;</a></h3>
-<p><em>version 19.0+</em> Sets the confirmation heights of all accounts to 0. Optional <code>--account</code> to only reset a single account.</p>
+<p><em>version 19.0+</em> Sets the confirmation heights of all accounts to 0. Optional <code>--account</code> to only reset a single account. Do not use while the node is running.</p>
 <h3 id="-daemon">--daemon<a class="headerlink" href="#-daemon" title="Permanent link">&para;</a></h3>
 <p>Start node daemon. Since version 19.0, network and path will be output, similar to:
 <div class="codehilite"><pre><span></span>./nano_node --daemon --network test
@@ -1930,13 +1944,18 @@ If you didn't set password yet, use --wallet_decrypt_unsafe --wallet=<code>&lt;w
 <h3 id="-disable_tcp_realtime">--disable_tcp_realtime<a class="headerlink" href="#-disable_tcp_realtime" title="Permanent link">&para;</a></h3>
 <p><em>version 19.0+</em>
 Turn off use of TCP live network (TCP for bootstrap will remain available)</p>
-<h3 id="-disable_udp">--disable_udp<a class="headerlink" href="#-disable_udp" title="Permanent link">&para;</a></h3>
-<p><em>version 19.0+</em>
+<h3 id="-disable_udp-deprecated">--disable_udp (Deprecated)<a class="headerlink" href="#-disable_udp-deprecated" title="Permanent link">&para;</a></h3>
+<p><em>version 21.0+</em>
+This option has been deprecated and will be removed in future versions. It has no effect because it is now the default.
+<em>version 19.0+</em>
 Turn off use of UDP live network</p>
 <h3 id="-disable_unchecked_cleanup">--disable_unchecked_cleanup<a class="headerlink" href="#-disable_unchecked_cleanup" title="Permanent link">&para;</a></h3>
 <p>Prevent periodic cleaning of unchecked table</p>
 <h3 id="-disable_unchecked_drop">--disable_unchecked_drop<a class="headerlink" href="#-disable_unchecked_drop" title="Permanent link">&para;</a></h3>
 <p>Prevent drop of all unchecked entries at node/wallet start</p>
+<h3 id="-enable_udp">--enable_udp<a class="headerlink" href="#-enable_udp" title="Permanent link">&para;</a></h3>
+<p><em>version 21.0+</em>
+Turn on use of the UDP live network.</p>
 <h3 id="-fast_bootstrap">--fast_bootstrap<a class="headerlink" href="#-fast_bootstrap" title="Permanent link">&para;</a></h3>
 <p>Increase bootstrap processor limits to allow more blocks before hitting full state and verify/write more per database call. Also disable deletion of processed unchecked blocks</p>
                 
