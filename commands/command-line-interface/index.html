@@ -1026,6 +1026,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-inactive_votes_cache_size" title="--inactive_votes_cache_size" class="md-nav__link">
+    --inactive_votes_cache_size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-vote_processor_capacity" title="--vote_processor_capacity" class="md-nav__link">
+    --vote_processor_capacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-disable_backup" title="--disable_backup" class="md-nav__link">
     --disable_backup
   </a>
@@ -1091,6 +1105,13 @@
           <li class="md-nav__item">
   <a href="#-enable_udp" title="--enable_udp" class="md-nav__link">
     --enable_udp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-allow_bootstrap_peers_duplicates" title="--allow_bootstrap_peers_duplicates" class="md-nav__link">
+    --allow_bootstrap_peers_duplicates
   </a>
   
 </li>
@@ -1717,6 +1738,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-inactive_votes_cache_size" title="--inactive_votes_cache_size" class="md-nav__link">
+    --inactive_votes_cache_size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-vote_processor_capacity" title="--vote_processor_capacity" class="md-nav__link">
+    --vote_processor_capacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-disable_backup" title="--disable_backup" class="md-nav__link">
     --disable_backup
   </a>
@@ -1782,6 +1817,13 @@
           <li class="md-nav__item">
   <a href="#-enable_udp" title="--enable_udp" class="md-nav__link">
     --enable_udp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-allow_bootstrap_peers_duplicates" title="--allow_bootstrap_peers_duplicates" class="md-nav__link">
+    --allow_bootstrap_peers_duplicates
   </a>
   
 </li>
@@ -1943,6 +1985,12 @@ If you didn't set password yet, use --wallet_decrypt_unsafe --wallet=<code>&lt;w
 <p>Increase block processor allowed blocks queue size before dropping live network packets and holding bootstrap download, default 65536, 1 million for fast_bootstrap</p>
 <h3 id="-block_processor_verification_size">--block_processor_verification_size<a class="headerlink" href="#-block_processor_verification_size" title="Permanent link">&para;</a></h3>
 <p>Increase batch signature verification size in block processor, default 0 (limited by config signature_checker_threads), unlimited for fast_bootstrap</p>
+<h3 id="-inactive_votes_cache_size">--inactive_votes_cache_size<a class="headerlink" href="#-inactive_votes_cache_size" title="Permanent link">&para;</a></h3>
+<p><em>version 21.0+</em>
+Increase cached votes without active elections size, default 16384</p>
+<h3 id="-vote_processor_capacity">--vote_processor_capacity<a class="headerlink" href="#-vote_processor_capacity" title="Permanent link">&para;</a></h3>
+<p><em>version 21.0+</em>
+Vote processor queue size before dropping votes, default 144k</p>
 <h3 id="-disable_backup">--disable_backup<a class="headerlink" href="#-disable_backup" title="Permanent link">&para;</a></h3>
 <p>Turn off automatic wallet backup process</p>
 <h3 id="-disable_lazy_bootstrap">--disable_lazy_bootstrap<a class="headerlink" href="#-disable_lazy_bootstrap" title="Permanent link">&para;</a></h3>
@@ -1968,6 +2016,9 @@ Turn off use of UDP live network</p>
 <h3 id="-enable_udp">--enable_udp<a class="headerlink" href="#-enable_udp" title="Permanent link">&para;</a></h3>
 <p><em>version 21.0+</em>
 Turn on use of the UDP live network.</p>
+<h3 id="-allow_bootstrap_peers_duplicates">--allow_bootstrap_peers_duplicates<a class="headerlink" href="#-allow_bootstrap_peers_duplicates" title="Permanent link">&para;</a></h3>
+<p><em>version 21.0+</em>
+Allow multiple connections to the same peer in bootstrap attempts</p>
 <h3 id="-fast_bootstrap">--fast_bootstrap<a class="headerlink" href="#-fast_bootstrap" title="Permanent link">&para;</a></h3>
 <p>Increase bootstrap processor limits to allow more blocks before hitting full state and verify/write more per database call. Also disable deletion of processed unchecked blocks</p>
                 
