@@ -598,6 +598,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../websockets/" title="WebSockets" class="md-nav__link">
+      WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../ipc-integration/" title="IPC Integration" class="md-nav__link">
       IPC Integration
     </a>
@@ -920,12 +932,12 @@
 <p>Due to notification methods not guaranteeing delivery of every block confirmed, it is recommended that manual requests for confirmation status be implemented as a fallback option. Both these types of methods are outlined below.</p>
 </div>
 <h3 id="receiving-notifications-of-confirmation">Receiving notifications of confirmation<a class="headerlink" href="#receiving-notifications-of-confirmation" title="Permanent link">&para;</a></h3>
-<p>The recommended method for receiving notifications is via WebSockets through the confirmation <code>topic</code>. This method involves sending a subscribe command to start receiving notifications every time a block is confirmed by the network. It is recommended that the <code>confirmation_type</code> filtering options are not used for this purpose, to make it less likely to miss a notification.</p>
+<p>The recommended method for receiving notifications is via <a href="/integration-guides/websockets">WebSockets</a> through the confirmation <code>topic</code>. This method involves sending a subscribe command to start receiving notifications every time a block is confirmed by the network. It is recommended that the <code>confirmation_type</code> filtering options are not used for this purpose, to make it less likely to miss a notification.</p>
 <p><strong>Setup process</strong></p>
 <ol>
-<li>Update your <a href="/running-a-node/configuration/#websocket">WebSocket configuration</a></li>
+<li>Update your <a href="/running-a-node/configuration/#nodewebsocket">WebSocket configuration</a></li>
 <li>Connect to the WebSocket at the configured endpoint</li>
-<li>Send a <a href="/integration-guides/advanced/#confirmations">subscription request for all confirmations</a> including the ack option and validate the subscription request was successful</li>
+<li>Send a <a href="/integration-guides/websockets#confirmations">subscription request for all confirmations</a> including the ack option and validate the subscription request was successful</li>
 <li>Listen for block confirmation notifications from the WebSocket</li>
 </ol>
 <p>As confirmations are received they can be parsed and handled as necessary. All operations handling notifications from the node on block confirmation should be idempotent as multiple notifications for the same block hash can occur.</p>

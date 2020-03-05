@@ -544,6 +544,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../integration-guides/websockets/" title="WebSockets" class="md-nav__link">
+      WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../integration-guides/ipc-integration/" title="IPC Integration" class="md-nav__link">
       IPC Integration
     </a>
@@ -3602,7 +3614,7 @@ Returns list of active elections roots (excluding stopped &amp; aborted election
 </div>
 <p>duration, time, confirmation_stats: version 17.0+_ <br />
 Returns hash, tally weight, election duration (in milliseconds), election confirmation timestamp for recent elections winners; since V20.0, the confirmation request count; since V21.0, the number of blocks and voters. Also returns stats: count of elections in history (limited to 2048) &amp; average duration time.</p>
-<p>With version 19.0+ <code>confirmation_history_size</code> can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the <a href="/integration-guides/advanced/#websocket-support">websocket</a> instead.</p>
+<p>With version 19.0+ <code>confirmation_history_size</code> can be managed in the configuration file to adjust the number of elections to be kept in history and returned by this call. Due to timings inside the node, the default 2048 limit will return all confirmations up to traffic levels of approximately 56 confirmations/sec. To properly track levels above this, increase this value or use the confirmation subscription through the <a href="/integration-guides/websockets">websocket</a> instead.</p>
 <p><strong>Request:</strong>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;confirmation_history&quot;</span>

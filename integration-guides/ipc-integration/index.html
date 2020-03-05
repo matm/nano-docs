@@ -546,6 +546,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../websockets/" title="WebSockets" class="md-nav__link">
+      WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1106,7 +1118,7 @@ LEGACY_RPC_RESPONSE ::= be32(length) JSON response
 
 <p>The <code>time</code> property is milliseconds since unix epoch when the message was produced on the server.</p>
 <p><strong>Relation to the WebSocket response structure</strong></p>
-<p>The <code>message</code> and <code>time</code> properties of the response envelope is exactly the same as in WebSockets (<a href="https://docs.nano.org/integration-guides/advanced/#websocket-support">https://docs.nano.org/integration-guides/advanced/#websocket-support</a>) Instead of <code>message_type</code>, WebSockets use <code>topic</code>. This structure should help simplify clients using both HTTP and WebSockets.</p>
+<p>The <code>message</code> and <code>time</code> properties of the response envelope is exactly the same as in <a href="/integration-guides/websockets">WebSockets</a>. Instead of <code>message_type</code>, WebSockets use <code>topic</code>. This structure should help simplify clients using both HTTP and WebSockets.</p>
 <p><strong>Headers</strong></p>
 <p>When calling without an envelope, credentials and a correlation id can still be set using an HTTP header:</p>
 <p><code>curl --header "Nano-Api-Key:mywalletuser" ...</code></p>
@@ -1277,8 +1289,8 @@ bare = true
 
         <!-- Link to previous page -->
         
-          <a href="../build-options/"
-              title="Build Options"
+          <a href="../websockets/"
+              title="WebSockets"
               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
               rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1291,7 +1303,7 @@ bare = true
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Build Options
+                WebSockets
               </span>
             </div>
           </a>

@@ -546,6 +546,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../integration-guides/websockets/" title="WebSockets" class="md-nav__link">
+      WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../integration-guides/ipc-integration/" title="IPC Integration" class="md-nav__link">
       IPC Integration
     </a>
@@ -1551,7 +1563,7 @@ The addition of confirmation height to the database requires the node to validat
 </div>
 <p>For those looking to utilize the new WebSocket confirmation subscription or new <code>confirmed</code> field in <a href="/commands/rpc-protocol/#block_info"><code>block_info</code></a> RPC responses, special considerations should be taken if implementing before confirmation height updates are complete:</p>
 <ul>
-<li>If the <a href="/integration-guides/advanced/#confirmations">websocket confirmation subscription</a> is hooked up to receive all confirmations (default) then notifications for confirmations will come through during the cementing process on a new or upgrading ledger as the confirmation process will occur (it also fires for dependent confirmations)</li>
+<li>If the <a href="/integration-guides/websockets">websocket confirmation subscription</a> is hooked up to receive all confirmations (default) then notifications for confirmations will come through during the cementing process on a new or upgrading ledger as the confirmation process will occur (it also fires for dependent confirmations)</li>
 <li>Calls to <a href="/commands/rpc-protocol/#block_info"><code>block_info</code></a> for blocks in the ledger before the confirmation height upgrade process began may indicate <code>confirmed</code> as <code>false</code> despite their having been confirmed on the network before. This is expected behavior.</li>
 <li>To validate that confirmation height upgrade is complete, note the <code>count</code> value from the <a href="/commands/rpc-protocol/#block_count"><code>block_count</code></a> RPC when the upgrade is started and once the <code>cemented</code> amount returned by this call (include the <code>include_cemented</code> option) is higher than that previous count, cementing is in sync.</li>
 </ul>
@@ -1607,7 +1619,7 @@ By default the RPC server will run in the node process, but can be configured to
 <ul>
 <li>New <code>active_elections_size</code> will limit the number of active elections allowed before dropping occurs. Default is 50,000 but higher settings are recommended for nodes provisioned with 8GB RAM or more</li>
 <li>New <code>bandwidth_limit</code> will limit the outbound voting traffic to 5MB/s by default</li>
-<li>New <code>confirmation_history_size</code> provides an adjustable limit on the batching of confirmations return in the <a href="/commands/rpc-protocol/#confirmation_history">confirmation_history</a> RPC. Default 2048 which will support up to ~56 confirmations/sec before confirmations may be missed. <strong>The new <a href="/integration-guides/advanced/#websocket-support">websocket setup</a> with confirmation subscription is recommended over use of the <a href="/commands/rpc-protocol/#confirmation_history">confirmation_history</a> RPC.</strong></li>
+<li>New <code>confirmation_history_size</code> provides an adjustable limit on the batching of confirmations return in the <a href="/commands/rpc-protocol/#confirmation_history">confirmation_history</a> RPC. Default 2048 which will support up to ~56 confirmations/sec before confirmations may be missed. <strong>The new <a href="/integration-guides/websockets">websocket setup</a> with confirmation subscription is recommended over use of the <a href="/commands/rpc-protocol/#confirmation_history">confirmation_history</a> RPC.</strong></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Advanced Configuration</p>
