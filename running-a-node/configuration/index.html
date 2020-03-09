@@ -504,6 +504,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nodework_threads" title="node.work_threads" class="md-nav__link">
+    node.work_threads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemax_work_generate_multiplier" title="node.max_work_generate_multiplier" class="md-nav__link">
+    node.max_work_generate_multiplier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#openclenable" title="opencl.enable" class="md-nav__link">
     opencl.enable
   </a>
@@ -685,6 +699,18 @@
   <li class="md-nav__item">
     <a href="../../integration-guides/block-confirmation-tracking/" title="Block Confirmation Tracking" class="md-nav__link">
       Block Confirmation Tracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integration-guides/work-generation/" title="Work Generation" class="md-nav__link">
+      Work Generation
     </a>
   </li>
 
@@ -1042,6 +1068,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nodework_threads" title="node.work_threads" class="md-nav__link">
+    node.work_threads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemax_work_generate_multiplier" title="node.max_work_generate_multiplier" class="md-nav__link">
+    node.max_work_generate_multiplier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#openclenable" title="opencl.enable" class="md-nav__link">
     opencl.enable
   </a>
@@ -1360,11 +1400,20 @@ enable_voting = true
 <p>Used when offloading work generation to another node or service. Format must be ipv6, preceded by <code>::ffff:</code> if ipv4. Hostnames are supported since v21. Calls are made to the address:port designated using the standard RPC format <a href="/commands/rpc-protocol#work_generate">work_generate</a>. Example:</p>
 <div class="codehilite"><pre><span></span>[node]
 work_peers = [
-    &quot;::ffff:127.0.0.1:7076&quot;,
     &quot;example.work-peer.org:7000&quot;
 ]
 </pre></div>
 
+<hr />
+<h4 id="nodework_threads">node.work_threads<a class="headerlink" href="#nodework_threads" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Alternative work generation setup preferred</p>
+<p>Due to potential performance impacts to nodes participating on the network (voting, staying in sync, etc.), when possible this option should be updated to a value of <code>0</code> to turn off local work generation. Please see the <a href="/integration-guides/work-generation">Work Generation guide</a> for best practices.</p>
+</div>
+<p>Determines the number of local CPU threads to used for work generation. To turn off local CPU work generation set to <code>0</code>. See <a href="#opencl-enable">opencl.enable</a> below for details on setting the node up for GPU-based work generation (preferred).</p>
+<hr />
+<h4 id="nodemax_work_generate_multiplier">node.max_work_generate_multiplier<a class="headerlink" href="#nodemax_work_generate_multiplier" title="Permanent link">&para;</a></h4>
+<p>Sets a limit on the multiplier above the base difficulty threshold that the node will generate. If the node is setup as a work peer itself, no requests for work higher than this limit will be accepted. Default value is <code>64.000000000000000</code>.</p>
 <hr />
 <h4 id="openclenable">opencl.enable<a class="headerlink" href="#openclenable" title="Permanent link">&para;</a></h4>
 <p>To enable GPU acceleration for PoW, set this option to <code>true</code>. Other OpenCL parameters may need to be adjusted depending on the desired setup.</p>
