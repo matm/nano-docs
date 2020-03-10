@@ -1727,19 +1727,23 @@ to increase it.</p>
 constructed and propagated throughout the network.</p>
 <h3 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">&para;</a></h3>
 <p><strong>Transaction Flow</strong></p>
-<p><div class="mermaid">graph LR;
+<div class="mermaid">graph LR;
   Receive--&gt;Repeat;
   Repeat--&gt;Observe;
   Observe--&gt;Quorum;
   Quorum--&gt;Confirm;</div>
-<p style="text-align: center; margin-top:-30px;font-weight:bold;">(a) When no conflict is detected, no further overhead is required.</p></p>
-<p><div class="mermaid">graph LR;
+
+<p style="text-align: center; font-weight:bold;">(a) When no conflict is detected, no further overhead is required.</p>
+
+<div class="mermaid">graph LR;
   Receive--&gt;Repeat;
   Repeat--&gt;Observe;
   Observe--&gt;Conflict;
   Conflict--&gt;Vote;
   Vote--&gt;Confirm;</div>
-<p style="text-align: center; margin-top:-30px;font-weight:bold;">(b) In the event of a conflicting transaction, nodes vote for the valid transaction.</p></p>
+
+<p style="text-align: center; font-weight:bold;">(b) In the event of a conflicting transaction, nodes vote for the valid transaction.</p>
+
 <p>Transferring funds from one account to another requires two
 transactions: a <em>send</em> deducting the amount from the sender's balance
 and a <em>receive</em> adding the amount to the receiving account's balance.</p>
@@ -2464,7 +2468,9 @@ formatting this paper.</p>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+        <script src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascript/mermaid-loose-security.js"></script>
       
     
   </body>
