@@ -4253,10 +4253,15 @@ Boolean, false by default. Only returns hashes which have their confirmation hei
 <hr />
 <h3 id="process">process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h3>
 <p>Publish <strong>block</strong> to the network. Using the optional <code>json_block</code> is recommended since v19.0. Since v20.0, blocks are watched for confirmation by default (see optional <code>watch_work</code>).  </p>
+<div class="admonition warning">
+<p class="admonition-title">Including <code>subtype</code> in <code>process</code> RPC calls highly recommended</p>
+<p>In order to avoid potential incorrect sends <strong>including the optional <code>subtype</code> parameter on all <a href="/commands/rpc-protocol/#process"><code>process</code></a> RPC calls is highly recommended</strong>. In the next version of the RPC this parameter will be required.</p>
+</div>
 <p><strong>Request:</strong>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;process&quot;</span><span class="p">,</span>
   <span class="nt">&quot;json_block&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;subtype&quot;</span><span class="p">:</span> <span class="s2">&quot;send&quot;</span><span class="p">,</span>
   <span class="nt">&quot;block&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span>
     <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="s2">&quot;nano_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z&quot;</span><span class="p">,</span>
@@ -4280,7 +4285,14 @@ Boolean, false by default. Only returns hashes which have their confirmation hei
 Boolean, false by default. Manually forcing fork resolution if processed block is not accepted as fork</p>
 <p><strong>Optional "subtype"</strong></p>
 <p><em>version 18.0+</em><br />
-String, empty by default. Additional check for state blocks subtype (send/receive/open/change/epoch). I.e. prevent accidental sending to incorrect accounts instead of receiving pending blocks   </p>
+String, empty by default. Additional check for state blocks subtype, i.e. prevent accidental sending to incorrect accounts instead of receiving pending blocks. Options:</p>
+<ul>
+<li><code>send</code> - account balance is reduced</li>
+<li><code>receive</code> - account balance is increased</li>
+<li><code>open</code> - first block on account with account balance initially set higher than 0</li>
+<li><code>change</code> - account balance is unchanged, representative field value changed to valid public address</li>
+<li><code>epoch</code> - block signed with epoch signer private key (does not allow balance or representative changes)</li>
+</ul>
 <p><strong>Optional "json_block"</strong></p>
 <p><em>version 19.0+</em><br />
 Default "false". If "true", "block" must contain a JSON subtree instead of a JSON string.</p>
